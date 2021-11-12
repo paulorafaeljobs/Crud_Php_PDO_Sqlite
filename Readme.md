@@ -5,5 +5,5 @@ Projeto Desenvolvido por mim
   <li>Bootstrap 4</li>
   <li>Sqlite</li>
 </ul>
-é possivel ultilizar o Mysql mudando o driver PDO no Model.php
+é possivel ultilizar o Mysql mudando o driver PDO no aquivo App/Model.php
 <img src='img.jpg'>
