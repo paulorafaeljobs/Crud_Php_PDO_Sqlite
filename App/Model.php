@@ -15,6 +15,28 @@ abstract class ClassConexao{
                 echo 'Erro ao Conectar com o Banco de Dados: '.$ex->getMessage();
             }
         }
+    
+    /*
+    // Conexao com Banco de Dados Mysql
+
+    function getConnection()
+        {
+            $dsn = 'mysql:host=localhost;dbname=database;charset=utf8';
+            $user = 'root';//Usuario
+            $pass = '';//Senha
+            try 
+            {
+                $pdo = new PDO($dsn, $user, $pass);
+                return $pdo;
+
+            }
+            catch (PDOException $ex){
+                echo 'Erro ao Conectar com o Banco de Dados: '.$ex->getMessage();
+            }
+        }
+
+        */
+
 }
 
 
