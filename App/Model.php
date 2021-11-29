@@ -5,8 +5,15 @@ abstract class ClassConexao{
         {
             try
             {
+                //Conexão com o Sqlite
                 $Con=new PDO("sqlite:".__DIR__."/BancoDados.db");
                 $sql = "CREATE TABLE IF NOT EXISTS cadastro (id integer primary key autoincrement, nome  text, telefone text, endereco text)";
+                
+                //Conexão com o Mysql
+                //$Con = new PDO('mysql:host=localhost;dbname=crudcadastro;charset=utf8', 'root','');
+                //$sql = "CREATE TABLE IF NOT EXISTS cadastro ( `id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(50) NULL DEFAULT NULL , `telefone` INT(15) NULL DEFAULT NULL , `endereco` TEXT NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+
+                
                 $stmt = $Con->prepare($sql);
                 $stmt->execute();
                 return $Con;
@@ -15,29 +22,11 @@ abstract class ClassConexao{
                 echo 'Erro ao Conectar com o Banco de Dados: '.$ex->getMessage();
             }
         }
-    
-    /*
-    // Conexao com Banco de Dados Mysql
-
-    function getConnection()
-        {
-            $dsn = 'mysql:host=localhost;dbname=database;charset=utf8';
-            $user = 'root';//Usuario
-            $pass = '';//Senha
-            try 
-            {
-                $pdo = new PDO($dsn, $user, $pass);
-                return $pdo;
-
-            }
-            catch (PDOException $ex){
-                echo 'Erro ao Conectar com o Banco de Dados: '.$ex->getMessage();
-            }
-        }
-
-        */
-
 }
+
+
+
+
 
 
 class Model  extends ClassConexao
